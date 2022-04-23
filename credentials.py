@@ -15,9 +15,18 @@ class Credentials:
         Args:
         accountname: Account name
         login: Account password
+        
         '''
         
         self.accountname = accountname
         self.login = login
-        
     
+    def newCredentials(self):
+        print("My credentials are" + self.accountname + self.login) 
+        
+    def save_credentials(self):
+        '''
+        method that saves credentials objects into credentials list
+        '''
+        
+        Credentials.credentials_list.append(self)
