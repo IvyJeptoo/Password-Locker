@@ -30,3 +30,34 @@ class Credentials:
         '''
         
         Credentials.credentials_list.append(self)
+        
+        
+    @classmethod
+    def find_by_name(cls,name):
+        '''
+        the method takes in accountname and it returns credential that matches the name
+        
+        Args:
+          name: Account name to be searched for
+          
+        Returns:
+          name of account that matches the name credential.
+          
+        '''
+        for credentials in cls.credentials_list:
+            if credentials.accountname == name:
+                return credentials
+            
+    def delete_credentials(self):
+        '''
+        deletes user object from user list
+        '''
+        
+        Credentials.credentials_list.remove(self)
+        
+    @classmethod
+    def display_credentials(cls):
+        '''
+        returns credentials list
+        '''
+        return cls.credentials_list
