@@ -14,7 +14,7 @@ It allows the users to create a password-locker account with a user_name and pas
 The user has an option of inputting their own password and not using the generated one.  
  
  ### Setup Requirements
-  + On the gitbu repository, clone the repo to your desired folder
+  + On the github repository, clone the repo to your desired folder
   + Navigate to the cloned folder
   + While on the folder path  run python3.8 run.py
   
