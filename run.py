@@ -148,8 +148,41 @@ def main():
                                         
                                 elif short_code == "cc":
                                     print("Please enter account name whose credentials is to be copied.")
-                                    account_name = input()
+                                    accountname = input()
                                     findAccount = find_credentials(account_name)
+                                    pyperclip.copy(findAccount.accountname)
+                                    
+                                    
+                                elif short_code == "da":
+                                    print("Enter the account name you want to delete")
+                                    accountname = input()
+                                    account = find_credentials(accountname)
+                                    delete_credentials(account)
+                                    
+                                elif short_code == "ex":
+                                    print("Are you sure you want to exit?")
+                                    print("Y/N")
+                                    userAnswer = input().upper()
+                                    if userAnswer == "Y":
+                                        print("Thank you for using password locker")
+                                        break
+                                    elif userAnswer == "N":
+                                        print("choose any option to continue \n 'nc' to create new credential,\n 'dc' to display credentials,\n 'cc' to copy credentials,\n 'ex' to exit the application")
+                                        short_code = input().lower()
+                                        
+                                        
+    elif short_code == "lg":
+        print("Enter Username")
+        user_username = input()
+        print("Enter password")
+        user_password = input()
+        
+        while user_username != "Stacy" or user_password != "Stacy2009":
+            print("Invalid username or password")
+            
+        else:
+            print("Your login is successful")
+        
                                     
                                 
                                 
