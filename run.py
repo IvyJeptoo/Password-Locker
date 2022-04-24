@@ -182,6 +182,78 @@ def main():
             
         else:
             print("Your login is successful")
+            while True:
+                print("Choose a navigation option")
+                print("nc....to create new credentials")
+                print("dc....to display credentials")
+                print("cc....to copy credentials")
+                print("da....to delete account credentials")
+                print("ex....to exit the application")
+                short_code = input().lower()
+                
+                if short_code == "nc":
+                    print("Enter account name")
+                    account_name = input()
+                    while True:
+                        print("Choose login with the short codes below")
+                        print("el => to enter login")
+                        print("gl => for generated login")
+                        print("ex => to exit")
+                        user_key = input().lower() 
+                        print("\n")
+                        if user_key == "el":
+                            print("enter login")
+                            login_input = input()
+                        elif user_key == "gl":
+                            login_input = generate_login()
+                            break
+                        elif user_key == "ex":
+                            break
+                        else:
+                            print("Check on your input")
+                                     #create new credential and saves it     
+                    save_credentials(create_credentials(account_name,login_input))
+                    print(f"Your credentials for {account_name} has been created, the login is {login_input}")
+                    
+                elif short_code == "dc":
+                    if display_credentials():
+                        print("Your credentials are: \n")
+                        for credentials in display_credentials:
+                            print(f"{credentials.accountname} - {credentials.login}")
+                                            
+                    else:
+                        print("You do not have any save credentials!")
+                                        
+                elif short_code == "cc":
+                    print("Please enter account name whose credentials is to be copied.")
+                    accountname = input()
+                    findAccount = find_credentials(account_name)
+                    pyperclip.copy(findAccount.accountname)
+                                    
+                                    
+                elif short_code == "da":
+                    print("Enter the account name you want to delete")
+                    accountname = input()
+                    account = find_credentials(accountname)
+                    delete_credentials(account)
+                                    
+                elif short_code == "ex":
+                    print("Are you sure you want to exit?")
+                    print("Y/N")
+                    userAnswer = input().upper()
+                    if userAnswer == "Y":
+                        print("Thank you for using password locker")
+                        break
+                    elif userAnswer == "N":
+                        print("choose any option to continue \n 'nc' to create new credential,\n 'dc' to display credentials,\n 'cc' to copy credentials,\n 'ex' to exit the application")
+                        short_code = input().lower()
+                        
+                    else:
+                        print("Please select a valid option")
+                        
+        
+                                        
+                    
         
                                     
                                 
