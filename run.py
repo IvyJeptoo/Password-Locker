@@ -64,8 +64,8 @@ def main():
     print("Hello There, Welcome to Password Locker...")
     print("Please find navigation around the locker below")
     print("\n")
-    print("lg => to login to your account")
-    print("sn => to Sign-Up and create account.")
+    print("lg.....to login to your account")
+    print("sn.....to Sign-Up and create account.")
     short_code = input().lower()
     print("\n")
     if short_code == "sn":
@@ -106,11 +106,11 @@ def main():
                             print(f"Hi {username}, Welcome to Password LOcker")
                             while True:
                                 print("Choose an option to continue")
-                                print("nc => to create new credentials")
-                                print("dc => to display credentials")
-                                print("cc => to copy credentials to clipboard")
-                                print("da => to delete account credentias")
-                                print("ex => to exit password locker")
+                                print("nc....to create new credentials")
+                                print("dc....to display credentials")
+                                print("cc....to copy credentials to clipboard")
+                                print("da....to delete account credentias")
+                                print("ex....to exit password locker")
                               
                                 short_code = input().lower()
                                 if short_code == "nc":
@@ -118,9 +118,9 @@ def main():
                                     account_name = input()
                                     while True:
                                         print("Choose login with the short codes below")
-                                        print("el => to enter login")
-                                        print("gl => for generated login")
-                                        print("ex => to exit")
+                                        print("el....to enter login")
+                                        print("gl....for generated login")
+                                        print("ex....to exit")
                                         user_key = input().lower() 
                                         print("\n")
                                         if user_key == "el":
@@ -181,7 +181,7 @@ def main():
             print("Invalid username or password")
             
         else:
-            print("Your login is successful")
+            print("Hi welcome back! ")
             while True:
                 print("Choose a navigation option")
                 print("nc....to create new credentials")
@@ -251,6 +251,13 @@ def main():
                     else:
                         print("Please select a valid option")
                         
+                        
+    else:
+        print("Please choose a valid short code!")
+        
+if __name__ == "__main__":
+    main()
+            
         
                                         
                     
