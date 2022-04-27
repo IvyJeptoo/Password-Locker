@@ -1,7 +1,8 @@
 #!/usr/bin/env python3.8
-import pyperclip as pyc
+import pyperclip 
+from ast import If
 from credentials import Credentials,User
-# from ast import if
+
 
 
 def create_user(username, password):
@@ -21,11 +22,11 @@ def delete_user(user):
     method to delete a user
     '''
     user.delete_user()        
-def create_credentials(sitename,accountname, password):
+def create_credentials(sitename,username, password):
     '''
     method to create new credential
     '''
-    new_credentials = Credentials(sitename,accountname, password)
+    new_credentials = Credentials(sitename,username, password)
     return new_credentials
        
 
@@ -150,7 +151,7 @@ def main():
                                     
                                     account_name = input("account name:").strip()
                                     if search_credentials(account_name):
-                                        pyc.copy(account.password)
+                                        pyperclip.copy(account.password)
                                         print("password copied ")
                                     else:
                                         print("account not found")
@@ -199,7 +200,7 @@ def main():
                                         
         elif short_code == "sn":
             print("Enter Your details")
-            user_username = input("Enter username:").strip()
+            username = input("Enter username:").strip()
             print("\n")        
         
         
@@ -223,7 +224,7 @@ def main():
                         print(f"your password is {password}")
                         break
                 else:
-                    print("pleasec choose valid short codes")
+                    print("please choose valid short codes")
                     
             password = password.strip()
             if password == "" or username == "" :

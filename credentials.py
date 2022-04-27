@@ -31,6 +31,9 @@ class User:
         
         User.user_list.append(self)
         
+    def delete_user(self):
+        User.users.remove(self)
+        
     
 
 class Credentials:
@@ -40,7 +43,7 @@ class Credentials:
     
     credentials_list = []
     
-    def __init__(self,accountname,sitename,login):
+    def __init__(self,username,sitename,login):
         '''
         define object properties
         
@@ -50,7 +53,7 @@ class Credentials:
         
         '''
         
-        self.accountname = accountname
+        self.username = username
         self.sitename = sitename
         self.login = login
     
@@ -92,7 +95,7 @@ class Credentials:
           
         '''
         for credentials in cls.credentials_list:
-            if credentials.accountname == sitename:
+            if credentials.sitename == sitename:
                 return credentials
     def aunthenticate(cls,username,password):
         '''
