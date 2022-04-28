@@ -6,7 +6,7 @@ class User:
     '''
     This class creates an instance of a user
     '''
-    user_list = []
+    users = []
     
     def __init__(self, username,password):
         '''
@@ -29,7 +29,7 @@ class User:
         saves user objects in the user_list
         '''
         
-        User.user_list.append(self)
+        User.users.append(self)
         
     def delete_user(self):
         User.users.remove(self)
@@ -97,6 +97,7 @@ class Credentials:
         for credentials in cls.credentials_list:
             if credentials.sitename == sitename:
                 return credentials
+    @classmethod      
     def aunthenticate(cls,username,password):
         '''
         method to check if user exists in users
